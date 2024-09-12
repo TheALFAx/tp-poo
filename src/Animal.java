@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
+private ''
 
 abstract class Animal {
     private String nombre;

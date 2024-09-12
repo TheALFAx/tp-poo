@@ -7,7 +7,6 @@ public class Main {
         Perros firulais = new Perros("Juan Manuel","Pastor Aleman","5 años","Masculino",false);
         Ave pajaro = new Ave("Roka","Tortola turca","2 años","Masculino",true);
 
-        Animal.cargarAnimal();
 
 
 

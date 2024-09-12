@@ -92,6 +92,7 @@ abstract class Animal {
 
             if (tipoAnimal == 1) {
             System.out.println("Ingrese los");
+            a
             }
         }
     }

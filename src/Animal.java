@@ -91,9 +91,23 @@ abstract class Animal {
             scanner.nextLine();
 
             if (tipoAnimal == 1) {
-            System.out.println("Ingrese los");
+            System.out.println("Ingrese los datos del animal: ");
 
+            System.out.println("Nombre: ");
+            String nombre = scanner.nextLine();
+
+            System.out.println("Edad: ");
+            String edad = scanner.nextLine();
+
+            System.out.println("Sexo M/F: ");
+            String sexo = scanner.nextLine();
+
+            System.out.println("Raza: ");
+            String raza = scanner.nextLine();
+
+            Gatos gato = new Gatos(nombre, edad, sexo, raza);
             }
+
         }
     }
 }

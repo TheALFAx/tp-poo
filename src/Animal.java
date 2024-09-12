@@ -91,7 +91,7 @@ abstract class Animal {
             scanner.nextLine();
 
             if (tipoAnimal == 1) {
-
+            a
             }
         }
     }

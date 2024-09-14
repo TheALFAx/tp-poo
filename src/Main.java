@@ -1,14 +1,16 @@
-
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Gatos michi = new Gatos("Viccinato","Callejero","4 años","Masculino",false);
-        Perros firulais = new Perros("Juan Manuel","Pastor Aleman","5 años","Masculino",false);
-        Ave pajaro = new Ave("Roka","Tortola turca","2 años","Masculino",true);
+        ArrayList <Ave> aves = new ArrayList<>();
+        ArrayList <Perros> perros = new ArrayList<>();
+        ArrayList <Gatos> gatos = new ArrayList<>();
 
+        Animal.agregarAnimal(aves, perros, gatos);
+        Animal.mostrarAnimal(aves, perros, gatos);
 
-
-
+        System.out.println("Espero que disfrute la compañía de los animalitos!");
+        System.out.println("- Veterinaria los Pibes. -");
     }
 }

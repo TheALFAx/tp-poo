@@ -1,11 +1,7 @@
 public class Ave extends Animal {
-    Boolean enojo = false;
 
-    public Ave(String nombre, String raza, String edad, String sexo, Boolean enojo) {
-        super(nombre, raza, edad, sexo, enojo);
+    public Ave(String nombre, String edad, String sexo, String raza) {
+        super(nombre, edad, sexo, raza);
     }
 
-    public void hacerSonido() {
-        System.out.println(this.getNombre() + " está cantando. * Pio Pio *");
     }
-}

@@ -1,0 +1,9 @@
+Fecha de ingreso: 2024-09-17 17:52:55
+Nuevo ave agregado al sistema
+Informacion:
+Nombre: fenix
+Edad: 1400 meses
+Sexo: hembra
+Raza: ave fenix
+
+

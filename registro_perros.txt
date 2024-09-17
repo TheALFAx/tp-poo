@@ -1,0 +1,9 @@
+Fecha de ingreso: 2024-09-17 17:51:20
+Nuevo perro agregado al sistema
+Informacion:
+Nombre: tomi
+Edad: 80 meses
+Sexo: macho
+Raza: caniche
+
+

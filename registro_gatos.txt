@@ -1,0 +1,9 @@
+Fecha de ingreso: 2024-09-17 17:52:14
+Nuevo gato agregado al sistema
+Informacion:
+Nombre: fefo
+Edad: 46 meses
+Sexo: macho
+Raza: angora
+
+

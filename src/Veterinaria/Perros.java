@@ -1,4 +1,5 @@
-import java.util.Scanner;
+package Veterinaria;
+
 public class Perros extends Animal {
 
     public Perros(String nombre, String edad, String sexo, String raza) {

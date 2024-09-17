@@ -1,9 +1,17 @@
+package Veterinaria;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
-abstract class Animal {
+
+public abstract class Animal {
     private String nombre;
     private String edad;
     private String sexo;
@@ -45,6 +53,24 @@ abstract class Animal {
         this.raza = raza;
     }
 
+    private static void guardarArchivo(String data_id,String tipo, String nombre, String edad, String sexo, String raza) {
+        LocalDateTime fechaActual = LocalDateTime.now();
+        // Formatear la fecha a un formato más legible
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String fechaFormateada = fechaActual.format(formatter);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(data_id,true))) {
+            writer.write("Fecha de ingreso: " + fechaFormateada + "\n");
+            writer.write("Nuevo " + tipo+ " agregado al sistema\n");
+            writer.write("Informacion:\n" + "Nombre: " + nombre.toLowerCase() + "\nEdad: " + edad.toLowerCase() +" meses"+ "\nSexo: " + sexo.toLowerCase() + "\nRaza: " + raza.toLowerCase() + "\n\n");
+            writer.newLine();
+
+            System.out.println("El contenido ha sido guardado en el archivo.");
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+
     //declaracion de metodos
     //Los declaro static para poder anunciarlo en main sin tener que instanciar el mismo.
     public static void agregarAnimal(ArrayList<Ave> aves, ArrayList<Perros> perros, ArrayList<Gatos> gatos) {
@@ -82,18 +108,21 @@ abstract class Animal {
                     case 1:
                         Perros perro = new Perros(nombre, edad, sexo, raza);
                         perros.add(perro);
+                        guardarArchivo("registro_perros.txt","perro",nombre,edad,sexo,raza);
                         System.out.println(nombre + " fue agregado exitosamente!");
                         break;
 
                     case 2:
                         Gatos gato = new Gatos(nombre, edad, sexo, raza);
                         gatos.add(gato);
+                        guardarArchivo("registro_gatos.txt","gato",nombre,edad,sexo,raza);
                         System.out.println(nombre + " fue agregado exitosamente!");
                         break;
 
                     case 3:
                         Ave ave = new Ave(nombre, edad, sexo, raza);
                         aves.add(ave);
+                        guardarArchivo("registro_aves.txt","ave",nombre,edad,sexo,raza);
                         System.out.println(nombre + " fue agregado exitosamente!");
 
                     default:
@@ -114,18 +143,18 @@ abstract class Animal {
 
     //iterador para recorrer el arrayList, mostrandome en pantalla cada uno de los datos ingresados.
     public static void mostrarAnimal(ArrayList<Ave> aves, ArrayList<Perros> perros, ArrayList<Gatos> gatos){
-        System.out.println("Perros ingresados: ");
-        //defino el tipo de datos que va a tratar el iterador, en este caso, <Perros>.
-        //perros es un objeto del array de ArrayList<Perros>
+        System.out.println("Veterinaria.Perros ingresados: ");
+        //defino el tipo de datos que va a tratar el iterador, en este caso, <Veterinaria.Perros>.
+        //perros es un objeto del array de ArrayList<Veterinaria.Perros>
         Iterator<Perros> iteradorPerros = perros.iterator();
         //el .hasNext() verifica si hay elementos en la lista que no hayan sido recorridos.
         while (iteradorPerros.hasNext()){
-            //el .next() devuelve el siguiente elemento de la lista, asignandolo a la variable perro en Perros.
+            //el .next() devuelve el siguiente elemento de la lista, asignandolo a la variable perro en Veterinaria.Perros.
             Perros perro = iteradorPerros.next();
             System.out.println("Nombre: " + perro.getNombre() + ", Edad: " + perro.getEdad() + " (meses), Sexo:" +
                     perro.getSexo() + ", Raza: " + perro.getRaza() + ".");
         }
-        System.out.println("Gatos ingresados: ");
+        System.out.println("Veterinaria.Gatos ingresados: ");
         Iterator<Gatos> iteradorGatos = gatos.iterator();
         while (iteradorGatos.hasNext()){
             Gatos gato = iteradorGatos.next();

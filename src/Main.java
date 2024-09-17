@@ -1,3 +1,5 @@
+import Veterinaria.*;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -13,4 +15,5 @@ public class Main {
         System.out.println("Espero que disfrute la compañía de los animalitos!");
         System.out.println("- Veterinaria los Pibes. -");
     }
+
 }
